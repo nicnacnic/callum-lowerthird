@@ -1,0 +1,81 @@
+{
+  "name": "nodecg-callum-lowerthird",
+  "version": "1.0.0",
+  "description": "",
+  "author": "nicnacnic",
+  "license": "MIT",
+  "nodecg": {
+    "compatibleRange": "^1.8.1",
+    "assetCategories": [
+      {
+        "name": "eventLogo",
+        "title": "Event Logo",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "gif",
+          "png"
+        ]
+      }
+    ],
+    "dashboardPanels": [
+      {
+        "name": "clock",
+        "title": "Clock",
+        "width": 3,
+        "file": "clock/clock.html"
+      },
+      {
+        "name": "eventName",
+        "title": "Event",
+        "width": 9,
+        "file": "eventName/eventName.html"
+      },
+      {
+        "name": "upNext",
+        "title": "Up Next",
+        "width": 3,
+        "file": "upNext/upNext.html"
+      },
+      {
+        "name": "title",
+        "title": "Title",
+        "width": 3,
+        "file": "title/title.html"
+      },
+      {
+        "name": "message",
+        "title": "Message",
+        "width": 3,
+        "file": "message/message.html"
+      },
+      {
+        "name": "database",
+        "title": "Database",
+        "width": 3,
+        "file": "database/database.html"
+      },
+      {
+        "name": "editMessage",
+        "title": "",
+        "width": 3,
+        "dialog": true,
+        "file": "editMessage/editMessage.html"
+      },
+      {
+        "name": "settings",
+        "title": "",
+        "width": 3,
+        "dialog": true,
+        "file": "settings/settings.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "lowerThird/lowerThird.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  }
+}

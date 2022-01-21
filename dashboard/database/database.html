@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../nodecgComponents/nodecgComponents.css">
+    <script src="../nodecgComponents/nodecgComponents.js" defer></script>
+    <link rel="stylesheet" href="database.css" />
+    <script src="database.js"></script>
+</head>
+
+<body>
+    <button id="newMessage" onClick="createMessage()">New Message</button>
+    <div class="input">
+        <input type="text" id="messageSeatch" oninput="search(this.value)"></input>
+        <label>Search</label>
+        <div class="inputBorder"></div>
+    </div>
+    <div id="messageBankDiv">
+
+    </div>
+    <button id="settings" onClick="nodecg.sendMessage('openSettings')">Settings</button>
+</body>
+
+</html>

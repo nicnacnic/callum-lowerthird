@@ -1,0 +1,23 @@
+button {
+    margin: 15px auto;
+    width: 50%;
+    display: block;
+}
+
+#displayTimed {
+    background-color: DodgerBlue;
+}
+
+#displayOn {
+    background-color: MediumSeaGreen;
+}
+
+#hide {
+    background-color: IndianRed;
+}
+
+.input {
+    margin: 15px auto;
+    width: 50%;
+    display: block;
+}

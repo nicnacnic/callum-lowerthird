@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../nodecgComponents/nodecgComponents.css">
+    <script src="../nodecgComponents/nodecgComponents.js" defer></script>
+    <script src="../utils.js"></script>
+    <link rel="stylesheet" href="upNext.css" />
+</head>
+
+<body onLoad="loadDropdown('upNext')">
+    <button id="displayTimed">Display (Timed)</button>
+    <button id="displayOn" onClick="setText(document.getElementById('message').value)">Display (On)</button>
+    <button id="hide" onClick="hideText()">Hide</button>
+    <div class="input">
+        <select id="message"></select>
+        <label>Value</label>
+        <div class="inputBorder"></div>
+    </div>
+</body>
+
+</html>

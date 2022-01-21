@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../nodecgComponents/nodecgComponents.css">
+    <script src="../nodecgComponents/nodecgComponents.js"></script>
+    <link rel="stylesheet" href="editMessage.css" />
+    <script src="editMessage.js"></script>
+</head>
+
+<body>
+    <div class="input">
+        <select id="type">
+            <option value="title">Title</option>
+            <option value="upNext">Up Next</option>
+            <option value="message">Message</option>
+        </select>
+        <label>Type</label>
+        <div class="inputBorder"></div>
+    </div>
+    <div class="input">
+        <input type="text" id="name"></input>
+        <label>Name</label>
+        <div class="inputBorder"></div>
+    </div>
+    <div class="input">
+        <input type="text" id="line1"></input>
+        <label>Line 1</label>
+        <div class="inputBorder"></div>
+    </div>
+    <div class="input">
+        <input type="text" id="line2"></input>
+        <label>Line 2</label>
+        <div class="inputBorder"></div>
+    </div>
+    <button id="save" onclick="save()" noripple>Save</button>
+</body>
+
+</html>

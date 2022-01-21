@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../nodecgComponents/nodecgComponents.css">
+    <script src="../nodecgComponents/nodecgComponents.js" defer></script>
+    <link rel="stylesheet" href="settings.css" />
+    <script src="settings.js"></script>
+</head>
+
+<body>
+    <div class="input">
+        <input type="text" id="eventName" onChange="settings.value.eventName = this.value"></input>
+        <label>Event Name</label>
+        <div class="inputBorder"></div>
+    </div>
+    <div class="input">
+        <input type="text" id="backgroundColor" onChange="settings.value.backgroundColor = this.value"></input>
+        <label>Background Color</label>
+        <div class="inputBorder"></div>
+    </div>
+    <div class="input">
+        <input type="text" id="foregroundColor" onChange="settings.value.foregroundColor = this.value"></input>
+        <label>Foreground Color</label>
+        <div class="inputBorder"></div>
+    </div>
+    </div>
+</body>
+
+</html>

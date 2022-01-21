@@ -10,13 +10,13 @@
 </head>
 
 <body onLoad="loadDropdown('upNext')">
-    <button id="displayTimed">Display (Timed)</button>
+    <button id="displayTimed" onClick="setTextTimed(document.getElementById('message').value)">Display (Timed)</button>
     <button id="displayOn" onClick="setText(document.getElementById('message').value)">Display (On)</button>
     <button id="hide" onClick="hideText()">Hide</button>
-    <div class="input">
+    <div class="select">
         <select id="message"></select>
         <label>Value</label>
-        <div class="inputBorder"></div>
+        <div class="selectBorder"></div>
     </div>
 </body>
 

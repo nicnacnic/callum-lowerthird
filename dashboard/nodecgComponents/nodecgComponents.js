@@ -1,30 +1,25 @@
-const { get, set } = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
-
 window.addEventListener('load', () => {
-    //setTimeout(() => {
-        const buttons = document.querySelectorAll('button');
-        for (let button of buttons) {
-            if (!button.hasAttribute('noRipple')) button.addEventListener('click', createRipple)
-        }
+    const buttons = document.querySelectorAll('button');
+    for (let button of buttons) {
+        if (!button.hasAttribute('noRipple')) button.addEventListener('click', createRipple)
+    }
 
-        const inputs = document.querySelectorAll('input');
-        for (let input of inputs) {
-            switch (input.type) {
-                case 'range': input.addEventListener('input', updateSlider); input.style.setProperty('--slider-value', `${(input.value - input.min) / (input.max - input.min) * 100}%`); break;
-                default: input.addEventListener('blur', toggleInputLabel); defineInputValue(input); break;
-            }
+    const inputs = document.querySelectorAll('input');
+    for (let input of inputs) {
+        input.setAttribute('placeholder', ' ');
+        input.setAttribute('autocomplete', 'off')
+        if (input.type === 'range') {
+            input.addEventListener('input', updateSlider);
+            input.style.setProperty('--slider-value', `${(input.value - input.min) / (input.max - input.min) * 100}%`);
         }
+    }
 
-        const selects = document.querySelectorAll('select');
-        for (let select of selects) {
-            select.addEventListener('change', toggleSelectLabel);
-            if (select.value.length > 0) {
-                select.nextElementSibling.classList.add('selectLabelFocus')
-            }
-        }
-    //}, 1500);
-    // your code here
-});
+    const selects = document.querySelectorAll('select');
+    for (let select of selects) {
+        select.setAttribute('placeholder', ' ');
+        select.setAttribute('autocomplete', 'off')
+    }
+})
 
 function createRipple(event) {
     const button = event.currentTarget;
@@ -40,30 +35,6 @@ function createRipple(event) {
     if (ripple)
         ripple.remove();
     button.appendChild(circle);
-}
-
-function toggleInputLabel() {
-    if (this.value.toString().length > 0) { this.nextElementSibling.classList.add('inputLabelFocus') }
-    else this.nextElementSibling.classList.remove('inputLabelFocus');
-}
-
-function toggleSelectLabel() {
-    if (this.value.length > 0)
-        this.nextElementSibling.classList.add('selectLabelFocus')
-    else
-        this.nextElementSibling.classList.remove('selectLabelFocus')
-}
-
-function defineInputValue(input) {
-    Object.defineProperty(input, 'value', {
-        get() { return get.call(this); },
-        set(newVal) {
-            if (newVal !== undefined && newVal !== null && newVal.toString().length > 0) input.nextElementSibling.classList.add('inputLabelFocus')
-            else input.nextElementSibling.classList.remove('inputLabelFocus')
-            return set.call(this, newVal);
-        }
-    });
-    if (input.value.toString().length > 0) input.nextElementSibling.classList.add('inputLabelFocus')
 }
 
 function updateSlider() { this.style.setProperty('--slider-value', `${(this.value - this.min) / (this.max - this.min) * 100}%`) }

@@ -10,14 +10,27 @@
 </head>
 
 <body onLoad="loadDropdown('message')">
-    <button id="displayTimed">Display (Timed)</button>
-    <button id="displayOn" onClick="setText(document.getElementById('message').value)">Display (On)</button>
+    <button id="displayTimed" onClick="setCustomTextTimed(document.getElementById('line1').value, document.getElementById('line2').value)">Display (Timed)</button>
+    <button id="displayOn" onClick="setCustomText(document.getElementById('line1').value, document.getElementById('line2').value)">Display (On)</button>
     <button id="hide" onClick="hideText()">Hide</button>
     <div class="input">
-        <select id="message"></select>
-        <label>Value</label>
+        <input id="line1"></input>
+        <label>Line 1</label>
         <div class="inputBorder"></div>
     </div>
+    <div class="input">
+        <input id="line2"></input>
+        <label>Line 2</label>
+        <div class="inputBorder"></div>
+    </div>
+    <script>
+        NodeCG.waitForReplicants(lowerthirdText).then(() => {
+            lowerthirdText.on('change', (newVal) => {
+                document.getElementById('line1').value = newVal[0];
+                document.getElementById('line2').value = newVal[1];
+            })
+        });
+    </script>
 </body>
 
 </html>
